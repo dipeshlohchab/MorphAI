@@ -5,7 +5,8 @@ Transform real-world photos into artistic renderings, or convert artwork back in
 
 The application features a cinematic darkroom-inspired interface, real-time image generation, drag-and-drop uploads, and downloadable outputs.
 
-![Demo Screenshot](static/image.png)
+![Demo Screenshot](static\image_photo_to_art.png)
+![Demo Screenshot](static\image_art_to_photo.png)
 
 ---
 
