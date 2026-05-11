@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bidirectional GAN Image Translation</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="page-container">
+        <header class="main-header">
+            <h1>Bidirectional GAN Image Translation</h1>
+            <p>Transform photos into art, or convert artwork back into a photo-like image using trained GAN generators.</p>
+        </header>
+
+        <div class="main-container">
+            <div class="column glass-card">
+                <header>
+                    <h2>1. Upload Image</h2>
+                    <p>Choose the image you want to transform.</p>
+                </header>
+
+                <label for="contentFile" class="preview-box" id="contentPreviewBox">
+                    <div class="placeholder" id="uploadPlaceholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5z" />
+                        </svg>
+                        <span>Click or drag to upload</span>
+                    </div>
+                </label>
+                <input type="file" id="contentFile" accept="image/*" required>
+
+                <p class="helper-text">Supported: JPG, PNG, WEBP • Max size: 10MB</p>
+
+                <div class="direction-box">
+                    <label for="directionSelect">Translation Mode</label>
+                    <select id="directionSelect">
+                        <option value="photo_to_art">Photo → Art</option>
+                        <option value="art_to_photo">Art → Photo</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="column glass-card result-column">
+                <header>
+                    <h2>2. Generated Output</h2>
+                    <p>The result will appear here.</p>
+                </header>
+
+                <div class="preview-box result-box" id="resultBox">
+                    <div class="placeholder" id="resultPlaceholder">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.471-2.471a2.652 2.652 0 00-3.75-3.75L4.5 12" />
+                        </svg>
+                        <span>Result will appear here</span>
+                    </div>
+
+                    <div class="spinner-overlay" id="loadingSpinner">
+                        <div class="spinner"></div>
+                    </div>
+
+                    <img id="resultImage" alt="Generated Result">
+                </div>
+
+                <div class="button-group">
+                    <button id="submitButton" class="generate-button">Generate</button>
+                    <button id="downloadButton" class="download-button" disabled>Download Result</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="error-toast" class="error-toast"></div>
+    <script src="/static/script.js"></script>
+</body>
+</html>
