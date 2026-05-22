@@ -124,8 +124,9 @@ obscura-ai/
 ## 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/obscura-ai.git
-cd obscura-ai
+git clone
+https://github.com/dipeshlohchab/MorphAI.git
+cd MorphAI
 ```
 
 ---
